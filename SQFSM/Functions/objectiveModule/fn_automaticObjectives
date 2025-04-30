@@ -1,3 +1,8 @@
   params[
       
         fn_initObjective.sqf
+
+
+fn_groupIsInfantrySquad.sqf
+
+// if infantry go into area with 5 or more buildings then it is given objective. If civilian then town if military then FOB
