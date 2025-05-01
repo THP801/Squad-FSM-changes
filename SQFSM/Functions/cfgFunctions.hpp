@@ -283,6 +283,7 @@ class CfgFunctions
             class getCurrentMan          {};
             class getNearFipoPositions   {};
             class setGlobalVar           {};
+	    class sqAirExclude		 {};
             class objectName             {};
             class playableUnit           {};
             class magazineData           {};
