@@ -1,0 +1,22 @@
+//Automatically excludes aircraft (note: the code was tweaked by chatGPT, may have errors)
+if (!isServer) exitWith {};
+
+private _excluded = [];
+
+private _exclude = {
+    {
+        if (_x isKindOf "Air" && {!(_x getVariable ["SQFSM_exclude", false])}) then {
+            _x setVariable ["SQFSM_exclude", true, true];
+            _excluded pushBack _x;
+        };
+    } forEach vehicles;
+};
+
+call _exclude;
+
+[] spawn {
+    while {true} do {
+        sleep 10;
+        call _exclude;
+    };
+};
