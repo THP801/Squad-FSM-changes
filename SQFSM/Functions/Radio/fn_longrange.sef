@@ -1,1 +1,6 @@
 //called if unit has long range, recon units + vehicles/ unit that call support
+params[
+    ["_position", nil,      [[]]],
+    ["_caller",   nil, [grpNull]]
+];
+private _side        = side _caller;
