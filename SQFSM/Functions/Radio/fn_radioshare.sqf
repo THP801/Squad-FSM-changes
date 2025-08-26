@@ -1,3 +1,7 @@
 //Infosharing first test
 // potentially useful functions 
 //BIS_fnc_diagKnownTargets, BIS_fnc_distance2D, BIS_fnc_distance2Dsqr, BIS_fnc_enemyTargets, BIS_fnc_objectSide, BIS_fnc_objectType, countType, countEnemy, BIS_fnc_dirTo, getRelDir, BIS_fnc_enemyDetected, BIS_fnc_friendlySides, https://community.bistudio.com/wiki/BIS_fnc_threat
+
+
+//plan: [squad 1, squad 2] call BIS_fnc_distance2D;
+// if return >81 then share info
