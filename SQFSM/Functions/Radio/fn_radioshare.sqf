@@ -20,3 +20,6 @@ private _enemyDetected = [_unit, 500] call BIS_fnc_enemyDetected;
 
 private _targets = _unit call BIS_fnc_enemyTargets;
 
+if!(_enemyDetected "True")exitWith{true;};
+
+_targets
