@@ -13,3 +13,10 @@ if (squad1 distanceSqr squad2 < _distanceSquared) then
 {
 	hint "units in talking range";
 };
+
+
+
+private _enemyDetected = [_unit, 500] call BIS_fnc_enemyDetected;
+
+private _targets = _unit call BIS_fnc_enemyTargets;
+
