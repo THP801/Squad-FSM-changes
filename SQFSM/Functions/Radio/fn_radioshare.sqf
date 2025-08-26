@@ -5,3 +5,11 @@
 
 //plan: [squad 1, squad 2] call BIS_fnc_distance2D;
 // if return >81 then share info
+
+
+
+private _distanceSquared = 80 * 80;
+if (squad1 distanceSqr squad2 < _distanceSquared) then
+{
+	hint "units in talking range";
+};
