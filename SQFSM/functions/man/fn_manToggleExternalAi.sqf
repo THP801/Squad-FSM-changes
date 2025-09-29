@@ -1,12 +1,18 @@
+/* fn_manToggleExternalAi.sqf
+   params:
+     _man - unit to toggle
+     _enableExternalAI - true = enable external AI (so unit is excluded from FSM)
+*/
 params [
     ["_man", objNull, [objNull]],
-    // explicit: pass true to enable external AI handling (i.e., not excluded)
+    // Explicit: true => external AI *enabled* (we mark unit as excluded from FSM)
     ["_enableExternalAI", true, [true]]
 ];
 
 if (_man isEqualTo objNull) exitWith { false };
 
-private _excluded = !_enableExternalAI;
+// excluded when external AI is enabled
+private _excluded = _enableExternalAI;
 
 private _vars = [
     "lambs_danger_disableAI",
@@ -15,12 +21,9 @@ private _vars = [
 ];
 
 {
-    // only set if current value differs
     private _cur = _man getVariable [_x, nil];
     if ((_cur isEqualTo nil) || (_cur != _excluded)) then {
-        // third arg true if you need this variable broadcast to all machines
+        // third param true if other machines rely on this being public
         _man setVariable [_x, _excluded, true];
     };
 } forEach _vars;
-
-true;
